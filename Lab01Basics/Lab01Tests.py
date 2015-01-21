@@ -12,6 +12,9 @@
 #           and also pytest. Ensure the Lab Code can 
 #           be imported.
 
+import pytest
+
+@pytest.mark.task1
 def test_petlib_present():
     """
     Try to import Petlib and pytest to ensure they are 
@@ -22,6 +25,7 @@ def test_petlib_present():
     import pytest
     assert True
 
+@pytest.mark.task1
 def test_code_present():
     """
     Try to import the code file. 
@@ -35,6 +39,7 @@ def test_code_present():
 # TASK 2 -- Symmetric encryption using AES-GCM 
 #           (Galois Counter Mode)
 
+@pytest.mark.task2
 def test_gcm_encrypt():
     """ Tests encryption with AES-GCM """
     from Lab01Code import encrypt_message
@@ -47,6 +52,7 @@ def test_gcm_encrypt():
     assert len(ciphertext) == len(message)
     assert len(tag) == 16
 
+@pytest.mark.task2
 def test_gcm_decrypt():
     """ Tests decryption with AES-GCM """
     from Lab01Code import encrypt_message, decrypt_message
@@ -62,6 +68,7 @@ def test_gcm_decrypt():
     m = decrypt_message(K, iv, ciphertext, tag)
     assert m == message
 
+@pytest.mark.task2
 def test_gcm_fails():
     from pytest import raises
 
@@ -96,6 +103,7 @@ def test_gcm_fails():
 #           - Implement Scalar multiplication (double & add).
 #           - Implement Scalar multiplication (Montgomery ladder).
 
+@pytest.mark.task3
 def test_on_curve():
     """
     Test the procedues that tests whether a point is on a curve.
@@ -115,7 +123,7 @@ def test_on_curve():
 
     assert is_point_on_curve(a, b, p, None, None)
 
-
+@pytest.mark.task3
 def test_Point_addition():
     """
     Test whether the EC point addition is correct.
@@ -168,6 +176,7 @@ def test_Point_addition():
         point_add(a, b, p, gx0, gy0, gx0, gy0)
     assert 'EC Points must not be equal' in str(excinfo.value)
 
+@pytest.mark.task3
 def test_Point_doubling():
     """
     Test whether the EC point doubling is correct.
@@ -194,7 +203,7 @@ def test_Point_doubling():
     assert is_point_on_curve(a, b, p, x2, y2)
     assert x2 == None and y2 == None
 
-
+@pytest.mark.task3
 def test_Point_scalar_mult_double_and_add():
     """
     Test the scalar multiplication using double and add.
@@ -219,7 +228,7 @@ def test_Point_scalar_mult_double_and_add():
     assert gx2 == x2
     assert gy2 == y2
 
-
+@pytest.mark.task3
 def test_Point_scalar_mult_montgomerry_ladder():
     """
     Test the scalar multiplication using double and add.
@@ -253,11 +262,13 @@ def test_Point_scalar_mult_montgomerry_ladder():
 #          - Implement ECDSA signature verification 
 #            using petlib.ecdsa
 
+@pytest.mark.task4
 def test_key_gen():
     """ Tests the key generation of ECDSA"""
     from Lab01Code import ecdsa_key_gen
     G, priv, pub = ecdsa_key_gen()
 
+@pytest.mark.task4
 def test_produce_signature():
     """ Tests signature function """
     msg = u"Test" * 1000
@@ -267,6 +278,7 @@ def test_produce_signature():
     sig = ecdsa_sign(G, priv, msg)
     assert True
 
+@pytest.mark.task4
 def test_check_signature():
     """ Tests signature and verification function """
     msg = u"Test" * 1000
@@ -277,6 +289,7 @@ def test_check_signature():
     sig = ecdsa_sign(G, priv, msg)
     assert ecdsa_verify(G, pub, msg, sig)
 
+@pytest.mark.task4
 def test_check_fail():
     """ Ensures verification fails when it should """
     msg = u"Test" * 1000
@@ -296,15 +309,7 @@ def test_check_fail():
 #           - Use Bob's public key to encrypt a message.
 #           - Use Bob's private key to decrypt the message.
 
+@pytest.mark.task5
 def test_key_gen():
     from Lab01Code import dh_get_key
     G, priv, pub = dh_get_key()
-
-def test_encrypt():
-    assert False
-
-def test_decrypt():
-    assert False
-
-def test_fails():
-    assert False
