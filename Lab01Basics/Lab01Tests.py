@@ -177,6 +177,32 @@ def test_Point_addition():
     assert 'EC Points must not be equal' in str(excinfo.value)
 
 @pytest.mark.task3
+def test_Point_addition_check_inf_result():
+    """
+    Test whether the EC point addition is correct for pt - pt = inf
+    """
+    from pytest import raises
+    from petlib.ec import EcGroup, EcPt
+    G = EcGroup(713) # NIST curve
+    d = G.parameters()
+    a, b, p = d["a"], d["b"], d["p"]
+    g = G.generator()
+    gx0, gy0 = g.get_affine()
+    gx1, gy1 = gx0, p - gy0
+
+    from Lab01Code import is_point_on_curve
+    from Lab01Code import point_add
+
+    assert is_point_on_curve(a, b, p, gx0, gy0)
+    assert is_point_on_curve(a, b, p, gx1, gy1)
+
+    x, y = point_add(a, b, p, gx0, gy0, gx1, gy1)
+    assert is_point_on_curve(a, b, p, x, y)
+    assert (x,y) == (None, None)
+
+
+
+@pytest.mark.task3
 def test_Point_doubling():
     """
     Test whether the EC point doubling is correct.
