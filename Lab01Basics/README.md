@@ -1,24 +1,5 @@
 # GA17 Privacy Enhancing Technologies -- Lab 01
 
-
-To update your local version in the virtual machine, go to the directory called `PET-Exercises` and type:
-
-    git pull
-
-## Lab 01
-[Lab01Basics/Lab01Readme.md](Click here!)
-
-
-
-To update your local version in the virtual machine, go to the directory called `PET-Exercises` and type:
-
-    git pull
-
-## Lab 01
-[Lab01Basics/Lab01Readme.md](Click here!)
-
-
-
 To update your local version in the virtual machine, go to the directory called `PET-Exercises` and type:
 
     git pull
@@ -87,7 +68,7 @@ Each Lab lasts for 2 full weeks including 2 1-hour lab classes, and work during 
 
 Make sure the submitted `Lab0XCode.py` file at least satisfies the tests, without the need for any external dependency except the python standard libraries and the petlib library. 
 
-## TASK 1 â€“ Basic installation
+## TASK 1 -- Basic installation
 > Ensure petlib is installed on the System
 > and also pytest. Ensure the Lab Code can 
 > be imported.
@@ -100,7 +81,7 @@ $ py.test -v Lab01Tests.py -m task1
 ```
 - If everything is installed correctly the two selected tests should both pass without a problem, and without any modification to the code file. This first task is meant to ensure everything is installed properly. If it fails, talk to a Lab TA.
 
-## TASK 2 â€“ Symmetric encryption using AES-GCM
+## TASK 2 -- Symmetric encryption using AES-GCM
 
 > Implement a encryption and decryption function
 > that simply performs AES_GCM symmetric encryption
@@ -127,7 +108,7 @@ $ py.test -v Lab01Tests.py -m task2
 - The documentation for petlib.cipher is [available here](http://petlib.readthedocs.org/en/latest/index.html#module-petlib-cipher).
 
 
-## TASK 3 â€“ Understand Elliptic Curve Arithmetic
+## TASK 3 -- Understand Elliptic Curve Arithmetic
 > - Test if a point is on a curve.
 > - Implement Point addition.
 > - Implement Point doubling.
@@ -158,7 +139,7 @@ $ py.test -v Lab01Tests.py -m task3
 - Note that the neutral element `(infinity)` is encoded in `(x, y)` coordinates as `(None, None)`. Make sure you handle this input correctly. Do you also output it correctly?
 
 
-## TASK 4 â€“ Standard ECDSA signatures
+## TASK 4 -- Standard ECDSA signatures
 > - Implement a key / param generation 
 > - Implement ECDSA signature using `petlib.ecdsa`
 > - Implement ECDSA signature verification using `petlib.ecdsa`
@@ -184,7 +165,7 @@ $ py.test -v Lab01Tests.py -m task4
 - It is necessary to use a secure hash function to hash an input before signing or verifying it (self study: why is that?). Luckily, the hashlib Python library provides a number of secure hash functions, and a number of insecure ones (Question: which is which?).
 
 
-## TASK 5 â€“ Diffie-Hellman Key Exchange and Derivation
+## TASK 5 -- Diffie-Hellman Key Exchange and Derivation
 > - use Bob's public key to derive a shared key.
 > - Use Bob's public key to encrypt a message.
 > - Use Bob's private key to decrypt the message.
@@ -215,7 +196,7 @@ The second option provides a stronger form of perfect forward secrecy. Any optio
 $ py.test --cov-report html --cov Lab01Code Lab01Code.py 
 ```
 
-## TASK 6 â€“ Time EC scalar multiplication
+## TASK 6 -- Time EC scalar multiplication
 > *Open Task - Optional*
 > 
 > Time your implementations of scalar multiplication
