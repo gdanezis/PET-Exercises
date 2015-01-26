@@ -8,19 +8,18 @@ To update your local version in the virtual machine, go to the directory called 
 [Lab01Basics/Lab01Readme.md](Click here!)
 
 
-> Basics of Petlib, encryption, signatures and
-> an end-to-end encryption system.
-> 
-> Run the tests through:
-> ```
-> $ py.test test_file_name.py
-> ```
-> 
-> On systems with a dual Python installation, you should specify that you want to use Python 2.7 (which petlib is based on):
-> ```
-> $ py.test-2.7 test_file_name.py
-> ```
-
+Basics of Petlib, encryption, signatures and
+an end-to-end encryption system.
+ 
+Run the tests through:
+```
+$ py.test test_file_name.py
+```
+ 
+On systems with a dual Python installation, you should specify that you want to use Python 2.7 (which petlib is based on):
+```
+$ py.test-2.7 test_file_name.py
+```
 
 ### Structure of Labs
 The structure of all the labs will be similar: two python files will be provided. 
