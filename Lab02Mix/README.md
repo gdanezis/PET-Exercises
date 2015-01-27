@@ -52,5 +52,28 @@ The full documentation of pytest is [available here](http://pytest.org/latest/).
 
 ## Lab 02 -- Basics of Engineering Mix Systems and Traffic Analysis
 
+## TASK 1 -- Check installation
 
+> Ensures that the key libraries may be loaded, and the code files are present. Nothing to do beyond ensuring this is the case.
 
+## Task 2 -- Build a simple 1-hop mix client
+
+> You are provided the code of the inner decoding function of a simple, one-hop mix server. Your task is to write a function that encodes a message to be send through the mix.
+
+## Hints:
+
+- You can run the tests just for this task by executing:
+
+	py.test -v Lab02Tests.py -m task2
+
+- Your objective is to complete the function `mix_client_one_hop`. This function takes as inputs a public key (an EC element) of the mix, an address and a message. It must then encode the message to be processed by the `mix_server_one_hop` in such a way that the mix will output a tuple of (address, message) presumably to be router to its final destination.
+
+- The message type is a Python NamedTuple already defined for you as `OneHopMixMessage`. The function `mix_client_one_hop` must return an object of this type. Such an object may be created simply by calling:
+
+	OneHopMixMessage(client_public_key, expected_mac, address_cipher, message_cipher)
+
+where the `client_public_key` is an EC point, the expected Hmac is an Hmac of the `address_cipher` and `message_cipher`, and those are AES Counter mode (AES-CTR) ciphertexts of the encoded address and message.
+
+- Study the function `mix_server_one_hop` that implements the one-hop mix. Take note of all the `petlib` cryptographic operations and checked performed in order to process a message. You will have to ensure they decode your message correctly.
+
+- The first element of a message is an ephemeral public key defined by the client (and the client knows its private part). The private key is used to derived a shared secret with the mix, using the mix public key. Study the code of the one-hop mix to examine the key derivation, and ensure your client mirrors it to generate messages that decode correctly.
