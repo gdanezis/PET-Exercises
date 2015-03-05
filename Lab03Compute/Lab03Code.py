@@ -36,7 +36,6 @@ def encrypt(params, pub, m):
         raise Exception("Message value to low or high.")
 
    # ADD CODE HERE
-   # Encrypt as (k*g, k*pub + m*h)
 
     return c
 
@@ -169,7 +168,7 @@ def process_votes(params, pub, encrypted_votes):
 def simulate_poll(votes):
     """ Simulates the full process of encrypting votes,
         tallying them, and then decrypting the total. """
-        
+
     # Generate parameters for the crypto-system
     params = setup()
 
