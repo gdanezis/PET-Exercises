@@ -203,7 +203,7 @@ $ py.test --cov-report html --cov Lab01Code Lab01Code.py
 >    scalar sizes)
 
 ### Hints
-- If you made it so far, talk to a TA (they may give you a code review task). 
+- If you made it so far, talk to a TA. 
 
 - If you are set on answering this question, you must time your execution of scalar multiplication to investigate timing side channels. 
 
