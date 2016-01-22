@@ -89,7 +89,7 @@ def point_add(a, b, p, x0, y0, x1, y1):
 
     Reminder: (xr, yr) = (xq, yq) + (xp, yp)
     is defined as:
-        lam = yq - yp * (xq - xp)^-1 (mod p)
+        lam = (yq - yp) * (xq - xp)^-1 (mod p)
         xr  = lam^2 - xp - xq (mod p)
         yr  = lam * (xp - xr) - yp (mod p)
 
