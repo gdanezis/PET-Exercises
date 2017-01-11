@@ -12,6 +12,11 @@
 #           Encryption and Decryption
 #
 
+###########################
+# Group Members: TODO
+###########################
+
+
 from petlib.ec import EcGroup
 
 def setup():

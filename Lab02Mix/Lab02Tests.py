@@ -14,6 +14,12 @@
 import pytest
 from pytest import raises
 
+try:
+    from Lab02Solution import *
+except:
+    from Lab02Code import *
+
+
 @pytest.mark.task1
 def test_petlib_present():
     """
@@ -40,7 +46,6 @@ def test_code_present():
 #
 
 from petlib.ec import EcGroup
-from Lab02Code import mix_server_one_hop, mix_client_one_hop
 
 ## What is a test fixture?
 #  http://pytest.org/latest/fixture.html
@@ -131,8 +136,6 @@ def test_simple_client_decode_many():
 ###################################
 # TASK 3 -- A multi-hop mix
 
-from Lab02Code import mix_server_n_hop, mix_client_n_hop
-
 @pytest.mark.task3
 def test_Alice_encode_1_hop():
     """
@@ -188,7 +191,6 @@ def test_Alice_encode_3_hop():
 ###########################################
 ## TASK 4 -- Simple traffic analysis / SDA
 
-from Lab02Code import generate_trace, analyze_trace
 import random
 
 @pytest.mark.task4

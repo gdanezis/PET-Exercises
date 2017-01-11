@@ -7,12 +7,22 @@
 # Run the tests through:
 # $ py.test test_file_name.py
 
+###########################
+# Group Members: TODO
+###########################
+
+
 #####################################################
 # TASK 1 -- Ensure petlib is installed on the System
 #           and also pytest. Ensure the Lab Code can 
 #           be imported.
 
 import pytest
+
+try:
+    from Lab01Solutions import *
+except:
+    from Lab01Code import *
 
 @pytest.mark.task1
 def test_petlib_present():
@@ -31,7 +41,6 @@ def test_code_present():
     Try to import the code file. 
     This is where the lab answers will be.
     """
-    import Lab01Code 
     assert True
 
 
@@ -42,7 +51,6 @@ def test_code_present():
 @pytest.mark.task2
 def test_gcm_encrypt():
     """ Tests encryption with AES-GCM """
-    from Lab01Code import encrypt_message
     from os import urandom
     K = urandom(16)
     message = u"Hello World!"
@@ -55,7 +63,6 @@ def test_gcm_encrypt():
 @pytest.mark.task2
 def test_gcm_decrypt():
     """ Tests decryption with AES-GCM """
-    from Lab01Code import encrypt_message, decrypt_message
     from os import urandom
     K = urandom(16)
     message = u"Hello World!"
@@ -72,7 +79,6 @@ def test_gcm_decrypt():
 def test_gcm_fails():
     from pytest import raises
 
-    from Lab01Code import encrypt_message, decrypt_message
     from os import urandom
     K = urandom(16)
     message = u"Hello World!"
@@ -139,9 +145,6 @@ def test_Point_addition():
     r = G.order().random()
     gx1, gy1 = (r*g).get_affine()
 
-    from Lab01Code import is_point_on_curve
-    from Lab01Code import point_add
-
     assert is_point_on_curve(a, b, p, gx0, gy0)
     assert is_point_on_curve(a, b, p, gx1, gy1)
 
@@ -190,8 +193,6 @@ def test_Point_addition_check_inf_result():
     gx0, gy0 = g.get_affine()
     gx1, gy1 = gx0, p - gy0
 
-    from Lab01Code import is_point_on_curve
-    from Lab01Code import point_add
 
     assert is_point_on_curve(a, b, p, gx0, gy0)
     assert is_point_on_curve(a, b, p, gx1, gy1)
@@ -218,8 +219,6 @@ def test_Point_doubling():
 
     gx2, gy2 = (2*g).get_affine()
 
-    from Lab01Code import is_point_on_curve
-    from Lab01Code import point_double
 
     x2, y2 = point_double(a, b, p, gx0, gy0)
     assert is_point_on_curve(a, b, p, x2, y2)
@@ -246,8 +245,6 @@ def test_Point_scalar_mult_double_and_add():
 
     gx2, gy2 = (r*g).get_affine()
 
-    from Lab01Code import is_point_on_curve
-    from Lab01Code import point_scalar_multiplication_double_and_add
 
     x2, y2 = point_scalar_multiplication_double_and_add(a, b, p, gx0, gy0, r)
     assert is_point_on_curve(a, b, p, x2, y2)
@@ -272,8 +269,6 @@ def test_Point_scalar_mult_montgomerry_ladder():
 
     gx2, gy2 = (r*g).get_affine()
 
-    from Lab01Code import is_point_on_curve
-    from Lab01Code import point_scalar_multiplication_montgomerry_ladder
 
     x2, y2 = point_scalar_multiplication_montgomerry_ladder(a, b, p, gx0, gy0, r)
     assert is_point_on_curve(a, b, p, x2, y2)
@@ -308,7 +303,6 @@ def test_produce_signature():
 def test_check_signature():
     """ Tests signature and verification function """
     msg = u"Test" * 1000
-    from Lab01Code import ecdsa_key_gen, ecdsa_sign, ecdsa_verify
 
     G, priv, pub = ecdsa_key_gen()
 
@@ -320,7 +314,6 @@ def test_check_fail():
     """ Ensures verification fails when it should """
     msg = u"Test" * 1000
     msg2 = u"Text" * 1000
-    from Lab01Code import ecdsa_key_gen, ecdsa_sign, ecdsa_verify
 
     G, priv, pub = ecdsa_key_gen()
 
@@ -337,5 +330,4 @@ def test_check_fail():
 
 @pytest.mark.task5
 def test_key_gen():
-    from Lab01Code import dh_get_key
     G, priv, pub = dh_get_key()

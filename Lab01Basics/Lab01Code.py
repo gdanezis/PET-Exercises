@@ -7,6 +7,10 @@
 # Run the tests through:
 # $ py.test-2.7 -v Lab01Tests.py 
 
+###########################
+# Group Members: TODO
+###########################
+
 
 #####################################################
 # TASK 1 -- Ensure petlib is installed on the System
@@ -220,21 +224,22 @@ def dh_get_key():
     return (G, priv_dec, pub_enc)
 
 
-def dh_encrypt(pub, message):
+def dh_encrypt(pub, message, aliceSig = None):
     """ Assume you know the public key of someone else (Bob), 
     and wish to Encrypt a message for them.
         - Generate a fresh DH key for this message.
         - Derive a fresh shared key.
         - Use the shared key to AES_GCM encrypt the message.
-        - Optionally: sign the message.
+        - Optionally: sign the message with Alice's key.
     """
     
     ## YOUR CODE HERE
     pass
 
-def dh_decrypt(priv, ciphertext):
+def dh_decrypt(priv, ciphertext, aliceVer = None):
     """ Decrypt a received message encrypted using your public key, 
-    of which the private key is provided"""
+    of which the private key is provided. Optionally verify 
+    the message came from Alice using her verification key."""
     
     ## YOUR CODE HERE
     pass

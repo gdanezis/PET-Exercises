@@ -9,7 +9,10 @@
 import pytest
 from pytest import raises
 
-from Lab04Code import *
+try:
+    from Lab04Solution import *
+except:
+    from Lab04Code import *
 
 #####################################################
 # TASK 1 -- Prove knowledge of a DH public key's 

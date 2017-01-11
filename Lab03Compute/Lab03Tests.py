@@ -14,7 +14,10 @@
 import pytest
 from pytest import raises
 
-from Lab03Code import *
+try:
+    from Lab03Solution import *
+except:
+    from Lab03Code import *
 
 @pytest.mark.task1
 def test_encrypt():

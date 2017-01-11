@@ -11,6 +11,11 @@
 #           and also pytest. Ensure the Lab Code can 
 #           be imported.
 
+###########################
+# Group Members: TODO
+###########################
+
+
 from collections import namedtuple
 from hashlib import sha512
 from struct import pack, unpack
@@ -156,7 +161,7 @@ def mix_server_n_hop(private_key, message_list, final=False):
         - it derives a shared key (using its private_key), 
         - checks the first hmac,
         - decrypts all other parts,
-        - Either forwards or decodes the message. 
+        - either forwards or decodes the message. 
     """
 
     G = EcGroup()

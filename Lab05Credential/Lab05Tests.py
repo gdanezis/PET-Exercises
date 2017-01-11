@@ -9,7 +9,10 @@
 import pytest
 from pytest import raises
 
-from Lab05Code import *
+try:
+    from Lab05Solution import *
+except:
+    from Lab05Code import *
 
 
 @pytest.mark.task1

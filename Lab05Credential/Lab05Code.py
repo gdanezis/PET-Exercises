@@ -65,7 +65,7 @@ def to_challenge(elements):
 # TASK 1 -- User Encrypts a secret value v and sends
 #           and sends it to the issuer. This v will 
 #           become the single attribute of the user.
-# te           Prove in ZK that the user knows v and the
+#           Prove in ZK that the user knows v and the
 #           private key of pub.
 
 ## IMPORTANT NOTE: The reference scheme for all the 
