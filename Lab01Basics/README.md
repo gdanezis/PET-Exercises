@@ -125,7 +125,9 @@ $ py.test -v Lab01Tests.py -m task3
 
 - petlib.bn provides facilities to do fast computations on `big numbers`.
 
+```
     from petlib.bn import Bn
+```
 
 - The documentation of petlib.bn provides ample examples of the use of each function to manipulate big numbers. It [is here](http://petlib.readthedocs.org/en/latest/index.html#module-petlib-bn)
 
@@ -155,9 +157,11 @@ $ py.test -v Lab01Tests.py -m task4
 
 - Note, that `petlib.ecdsa` provides both facilities to generate and verify signatures, as well as detailed documentation on how to use these. See `do_ecdsa_sign` and `do_ecdsa_verify`.
 
+```
     from hashlib import sha256
     from petlib.ec import EcGroup
     from petlib.ecdsa import do_ecdsa_sign, do_ecdsa_verify
+```
 
 - The documentation for `module-petlib-ecdsa` is [available here](http://petlib.readthedocs.org/en/latest/index.html#module-petlib-ecdsa). Do use it.
 
@@ -182,10 +186,7 @@ $ py.test -v Lab01Tests.py -m task5
 
 - This task requires you to implement a simple hybrid encryption scheme, guided by the scheme presented in the slides. In a nutshell you may assume that Alice and Bob are aware of each other's public keys, and use those to eventually derive a shared key. This shared key is eventually used to key an AES-GCM cipher to protect the integrity and confidentiality of a message.
 
-- Note there are two ways of implementing this task: 
-    (1) You may assume the shared public keys are encryption keys and derive a shared key from them; or 
-    (2) You may assume that the shared keys are verification keys, and use the associated private keys to sign an ephemeral fresh public key to encrypt messages. 
-The second option provides a stronger form of perfect forward secrecy. Any option satisfies the requirement of this exercise.
+- You may assume that the public key passed to `dh_encrypt` is the public encryption key of the recipient, and the `aliceeSig` parameter is the signature key of Alice the sender. Conversely, the `priv` paramemter of `dh_encrypt` is the receipient's (Bob) secret decryption key and `aliceVer` a public verification key for a signature scheme.
 
 - As part of this task you MUST implement a number of tests to ensure that your code is correct. Stubs for 3 such tests are provided, namely `test_encrypt`, `test_decrypt` (which are self explanatory), and `test_fails` which is meant to check for conditions under which the decryption must fail. At least these should be implemented in the code file, but feel free to implement more.
 
