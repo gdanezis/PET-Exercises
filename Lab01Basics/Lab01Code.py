@@ -110,7 +110,7 @@ def point_double(a, b, p, x, y):
      A special case, when a point needs to be added to itself.
 
      Reminder:
-        lam = 3 * xp ^ 2 + a * (2 * yp) ^ -1 (mod p)
+        lam = (3 * xp ^ 2 + a) * (2 * yp) ^ -1 (mod p)
         xr  = lam ^ 2 - 2 * xp
         yr  = lam * (xp - xr) - yp (mod p)
 
@@ -130,7 +130,7 @@ def point_scalar_multiplication_double_and_add(a, b, p, x, y, scalar):
     Reminder of Double and Multiply algorithm: r * P
         Q = infinity
         for i = 0 to num_bits(P)-1
-            if bit i of P == 1 then
+            if bit i of r == 1 then
                 Q = Q + P
             P = 2 * P
         return Q
