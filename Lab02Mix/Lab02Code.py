@@ -315,3 +315,15 @@ def analyze_trace(trace, target_number_of_friends, target=0):
 
     return []
 
+## TASK Q1 (Question 1): The mix packet format you worked on uses AES-CTR with an IV set to all zeros. 
+#                        Explain whether this is a security concern and justify your answer.
+
+""" TODO: Your answer HERE """
+
+
+## TASK Q2 (Question 2): What assumptions does your implementation of the Statistical Disclosure Attack 
+#                        makes about the distribution of traffic from non-target senders to receivers? Is
+#                        the correctness of the result returned dependent on this background distribution?
+
+""" TODO: Your answer HERE """
+

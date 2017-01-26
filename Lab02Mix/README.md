@@ -125,3 +125,7 @@ where the `client_public_key` is an EC point, the expected Hmac is an Hmac of th
 - Do study the function `generate_trace` that simulates a very simple anonymity system. It provides a good guide as to the types of data in the trace and their meaning, as well as a model you analysis can be based on.
 
 - Remember the insight from the Statistical Disclosure Attack: anonymity systems provide imperfect privacy. This is mainly due to the fact that when a target is sending its small number of contacts are more likely to be receiving than other users. You will need to turn this insight into an algorithm that finds those contacts.
+
+## TASK Q1 and Q2 -- Answer the questions with reference to the code you wrote.
+
+- Please include these as part of the Code file submitted, as a multi-line string, where the `TODO` indicates.
