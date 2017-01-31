@@ -193,7 +193,7 @@ $ py.test -v Lab01Tests.py -m task5
 - Your tests should run when you execute the following command, which produces a report on your tests coverage. Ensure all lines of code are fully covered by the test regime!
 
 ```
-$ py.test --cov-report html --cov Lab01Code Lab01Code.py 
+$ py.test --cov-report html --cov Lab01Code Lab01Tests.py 
 ```
 
 ## TASK 6 -- Time EC scalar multiplication
