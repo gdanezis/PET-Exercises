@@ -125,3 +125,7 @@ The full documentation of pytest is [available here](http://pytest.org/latest/).
 - The `process_votes` takes a number of individual pairs of votes and returns a pairs of ciphertexts encrypting the total number of votes to 0 and the total number of votes to 1.
 
 - Look at the function `simulate_poll` as a full example of a simulated distributed private poll.
+
+## TASK Qx -- Answer the questions on the basis of your code.
+
+> Please include the answers in the comment section provided, and make sure you code file can run correctly.
