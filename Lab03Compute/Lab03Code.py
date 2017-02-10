@@ -202,3 +202,30 @@ def simulate_poll(votes):
 
     # Return the plaintext values
     return total_v0, total_v1
+
+###########################################################
+# TASK Q1 -- Answer questions regarding your implementation
+#
+# Consider the following game between an adversary A and honest users H1 and H2: 
+# 1) H1 picks 3 plaintext integers Pa, Pb, Pc arbitrarily, and encrypts them to the public
+#    key of H2 using the scheme you defined in TASK 1.
+# 2) H1 provides the ciphertexts Ca, Cb and Cc to H2 who flips a fair coin b.
+#    In case b=0 then H2 homomorphically computes C as the encryption of Pa plus Pb.
+#    In case b=1 then H2 homomorphically computes C as the encryption of Pb plus Pc.
+# 3) H2 provides the adversary A, with Ca, Cb, Cc and C.
+#
+# What is the advantage of the adversary in guessing b given your implementation of 
+# Homomorphic addition? What are the security implications of this?
+
+""" Your Answer here """
+
+###########################################################
+# TASK Q2 -- Answer questions regarding your implementation
+#
+# Given your implementation of the private poll in TASK 5, how
+# would a malicious user implement encode_vote to (a) distrupt the
+# poll so that it yields no result, or (b) manipulate the poll so 
+# that it yields an arbitrary result. Can those malicious actions 
+# be detected given your implementation?
+
+""" Your Answer here """
