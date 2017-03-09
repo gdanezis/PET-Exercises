@@ -261,8 +261,8 @@ def test_bin_incorrect():
 # Consider the function "prove_something" below, that 
 # implements a zero-knowledge proof on commitments KX
 # and KY to x and y respectively. Note that the prover
-# only knows secret y. What statement is a verifier 
-# given the output of this function convinced of?
+# only knows secret y. What statement is a verifier, 
+# given the output of this function, convinced of?
 #
 # Hint: Look at "test_prove_something" too.
 
@@ -271,7 +271,7 @@ def test_bin_incorrect():
 def prove_something(params, KX, KY, y):
     (G, g, _, o) = params
 
-    # Simulate for KX
+    # Simulate proof for KX
     # r = wx - cx => g^w = g^r * KX^c 
     rx = o.random()
     c1 = o.random()
