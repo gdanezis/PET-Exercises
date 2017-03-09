@@ -103,3 +103,7 @@ The full documentation of pytest is [available here](http://pytest.org/latest/).
 ## TASK 6 -- (OPTIONAL) Prove that a ciphertext is either 0 or 1
 
 - You have to implement both proof and verification that an encrypted message under `pub` is 0 or 1 without revealing which.
+
+## TASK Q1 and Q2 -- Answer the two questions
+
+- In Q2 you are given a snippet of code, and a test for it. Do not forget to study both before answering the question.
