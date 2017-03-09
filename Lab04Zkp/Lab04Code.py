@@ -237,3 +237,76 @@ def test_bin_correct():
 def test_bin_incorrect():
     """ Prove that incorrect proofs fail. """
     pass
+
+#####################################################
+# TASK Q1 - Answer the following question:
+#
+# The interactive Schnorr protocol (See PETs Slide 8) offers 
+# "plausible deniability" when performed with an 
+# honest verifier. The transcript of the 3 step interactive 
+# protocol could be simulated without knowledge of the secret 
+# (see Slide 12). Therefore the verifier cannot use it to prove 
+# to a third party that the holder of secret took part in the 
+# protocol acting as the prover.
+#
+# Does "plausible deniability" hold against a dishonest verifier 
+# that  deviates from the Schnorr identification protocol? Justify 
+# your answer by describing what a dishonest verifier may do.
+
+""" TODO: Your answer here. """
+
+#####################################################
+# TASK Q2 - Answer the following question:
+#
+# Consider the function "prove_something" below, that 
+# implements a zero-knowledge proof on commitments KX
+# and KY to x and y respectively. Note that the prover
+# only knows secret y. What statement is a verifier 
+# given the output of this function convinced of?
+#
+# Hint: Look at "test_prove_something" too.
+
+""" TODO: Your answer here. """
+
+def prove_something(params, KX, KY, y):
+    (G, g, _, o) = params
+
+    # Simulate for KX
+    # r = wx - cx => g^w = g^r * KX^c 
+    rx = o.random()
+    c1 = o.random()
+    W_KX = rx * g + c1 * KX
+
+    # Build proof for KY
+    wy = o.random()
+    W_KY = wy * g
+    c = to_challenge([g, KX, KY, W_KX, W_KY])
+
+    # Build so that: c1 + c2 = c (mod o)
+    c2 = (c - c1) % o
+    ry = ( wy - c2 * y ) % o
+
+    # return proof
+    return (c1, c2, rx, ry)
+
+import pytest
+
+def test_prove_something():
+    params = setup()
+    (G, g, hs, o) = params
+
+    # Commit to x and y
+    x = o.random()
+    y = o.random()
+    KX = x*g
+    KY = y*g
+
+    # Pass only y
+    (c1, c2, rx, ry) = prove_something(params, KX, KY, y)
+
+    # Verify the proof
+    W_KX = rx * g + c1 * KX
+    W_KY = ry * g + c2 * KY
+    c = to_challenge([g, KX, KY, W_KX, W_KY])
+    assert c % o == (c1 + c2) % o
+
