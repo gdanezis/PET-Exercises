@@ -106,3 +106,7 @@ The user may verify the issuing was indeed correct. Finally, the user may use th
 - Your task is to modify the protocols of task 3 (above) to not only prove possession of a credential when showing it, but also proving that a credential's secret attribute v maps to the pseudonym claimed.
 
 - Feel free to re-use code from Task 3 -- the modification to also support pseudonyms is small. Note that the paper presents proving arbitrary predicates on attributes when Showing as a predicate phi(m_1, ..., m_n). Showing that the attribute v leads to a pseudonym H(.)^v is a simple case of such a predicate.
+
+## Task Q1 -- e-cash question
+
+- Answer the question in the space provided.

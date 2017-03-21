@@ -316,3 +316,5 @@ def credential_show_verify_pseudonym(params, issuer_params, pseudonym, tag, proo
 # ensuring both integrity (no-double spending) and privacy. 
 # What would the credential represent, and what statements
 # would need to be shown to a verifier.
+
+""" Your answer here. """
