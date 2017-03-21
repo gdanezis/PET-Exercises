@@ -307,3 +307,12 @@ def credential_show_verify_pseudonym(params, issuer_params, pseudonym, tag, proo
     # TODO (use code from above and modify as necessary!)
 
     return c == c_prime
+
+#####################################################
+# TASK Q1 -- Answer the following question:
+#
+# How could you use a credential scheme, such as the one you
+# implemented above to implement an electronic cash scheme
+# ensuring both integrity (no-double spending) and privacy. 
+# What would the credential represent, and what statements
+# would need to be shown to a verifier.
